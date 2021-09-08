@@ -11,6 +11,52 @@
 
   <body>
 
+
+ <div class="row-flex">
+  
+{{#if loggedInUser}}
+  <div class="spacing">
+    <span>welcome {{loggedInUser}}</span>
+  </div>
+    
+  <div class="spacing">
+     <form action="/logout" method="POST">
+     <button type="submit">logout</button>
+  </form>
+  </div>
+ 
+{{/if}}
+
+ 
+ <div class="spacing">
+   <a href="/">Index</a>
+ </div>
+   
+
+
+
+   {{#if loggedInUser}}
+   <div class="spacing">
+        <a href="/main">Main</a>
+   </div>
+
+   <div class="spacing">
+      <a href="/private">Private</a>
+   </div>
+    
+
+{{else}}
+<div class="spacing">
+   <a href="/signup">signup</a>
+</div>
+ 
+  <div class="spacing">
+       <a href="/login">login</a>
+  </div>
+
+{{/if}}
+ </div>
+
     {{{body}}}
 
     <script src="/js/script.js"></script>
